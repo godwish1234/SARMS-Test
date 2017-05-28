@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SARMS.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>SARMS Page</title>
+    <script type="text/javascript">
+
+        function changeType() {
+
+            if (document.getElementById("Admin").checked) {
+                document.getElementById("textfield").innerHTML = "Admin";
+            }
+
+            if (document.getElementById("Lecture").checked) {
+                document.getElementById("textfield").innerHTML = "Lecture";
+            }
+
+            if (document.getElementById("Student").checked) {
+                document.getElementById("textfield").innerHTML = "Student";
+            }
+        }
+
+        function changeSubmit() {
+            if (document.getElementById("Admin").checked) {
+                window.location.href = "webpages/AdminHome/AdminHP.aspx";
+            }
+            if (document.getElementById("Lecture").checked) {
+                window.location.href = "webpages/LecturerHome/LecturerHP.aspx";
+            }
+            if (document.getElementById("Student").checked) {
+                window.location.href = "webpages/StudentHome/StudentHP.aspx";
+            }
+        }
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+
+            <asp:ContentPlaceHolder ID="HeaderContent1" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <div class="nav">
+
+        </div>
+        <div class="sidebar">
+            <asp:ContentPlaceHolder ID="SideBarContent1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent1" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+            
+        </div>
+    </div>
+</body>
+</html>
